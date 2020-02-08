@@ -1,2 +1,3 @@
 ## employee-directory
-This a react app that allows the user to view all employees and sort them in order to quickly access information.
+This a react app that allows the user to view all employees and sort them in order to quickly access information. This homework is deployed on netlify at https://wizardly-roentgen-704caa.netlify.com/ I used the sort method to arrange the employees in the desired order and a map method to filter out undesired ages. future deployment includes more filters and options for sorting. 
+<img src="/public/images/screenshot.png"alt="screenshot">
