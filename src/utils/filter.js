@@ -1,15 +1,23 @@
-export default function filter(people, value) {
-switch (value) {
-    case "age":
-      console.log("age");
-      break;
-    case "gender":
-      console.log("gender");
-      break;
-    case "name":
-      console.log("name");
-      break;
-    default:
-      return alert("please select a parameter of age, gender, or name");
+export default function filter(people, limit, age, dispatch) {
+  console.log(people.length);
+  const param = JSON.parse(age);
+  if (limit === "under") {
+    for (let i = 0; i < people.length; i++) {
+      if (people[i].dob.age > param) {
+        people.splice(i, 1);
+      }
+    }
+  } else {
+    for (let i = 0; i < people.length; i++) {
+      if (people[i].dob.age < param) {
+        people.splice(i, 1);
+      }
+    }
   }
+  dispatch({
+    type: "UPDATE_PEOPLE",
+    payload: {
+      people: people
+    }
+  });
 }
