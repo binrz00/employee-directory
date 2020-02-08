@@ -1,5 +1,4 @@
 export default function filter(people, limit, age, dispatch) {
-  console.log(people.length);
   const param = JSON.parse(age);
   if (limit === "under") {
     for (let i = 0; i < people.length; i++) {

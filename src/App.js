@@ -18,7 +18,6 @@ function App() {
   const getPeople = async function() {
     const res = await fetch("https://randomuser.me/api/?results=10");
     const jsonres = await res.json();
-
     dispatch({
       type: "UPDATE_PEOPLE",
       payload: {
@@ -27,12 +26,8 @@ function App() {
     });
   };
   useEffect(() => {
-    // if(people.length === 0){
-    // getPeople();}
-    // else return
     getPeople();
   }, []);
-  console.log(state.people);
   function handleClick(event) {
     switch (event.target.value) {
       case "filter":
@@ -48,7 +43,7 @@ function App() {
   useEffect(() => {
     window.addEventListener("click", handleClick);
     return () => window.removeEventListener("click", handleClick);
-  }, [event]);
+  }, );
   return (
     <div className="App">
       <div className="container">
